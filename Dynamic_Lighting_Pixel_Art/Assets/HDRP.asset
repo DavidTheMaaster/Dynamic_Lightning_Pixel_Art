@@ -157,7 +157,7 @@ MonoBehaviour:
   m_RenderingPathDefaultCameraFrameSettings:
     bitDatas:
       data1: 70280697347917
-      data2: 4539628424926265344
+      data2: 4539628424792047616
     lodBias: 1
     lodBiasMode: 0
     lodBiasQualityLevel: 0
@@ -189,8 +189,8 @@ MonoBehaviour:
     materialQuality: 0
   m_RenderPipelineSettings:
     supportShadowMask: 1
-    supportSSR: 0
-    supportSSAO: 1
+    supportSSR: 1
+    supportSSAO: 0
     supportSubsurfaceScattering: 1
     increaseSssSampleCount: 0
     supportVolumetrics: 1
