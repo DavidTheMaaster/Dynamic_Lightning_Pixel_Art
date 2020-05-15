@@ -11,12 +11,14 @@ public class NPCBehaviour : MonoBehaviour
     float state;
 
     public float speed = 3.0f;
+    float previousState;
     float timer = 5.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         state = -1.0f;
+        previousState = state;
     }
 
     // Update is called once per frame
@@ -24,11 +26,19 @@ public class NPCBehaviour : MonoBehaviour
     {
         if (timer <= 0.0f)
         {
-            if (Random.Range(0, 100) < 20)
+            int rand = Random.Range(0, 100);
+
+            if (rand < 20)
             {
                 state = 0.0f;
+                timer = 5.0f;
             }
-            timer = 5.0f;
+            else
+            {
+                state = previousState;
+                timer = 8.0f;
+            }
+
         }
         else
             timer -= Time.deltaTime;
@@ -39,8 +49,14 @@ public class NPCBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 8)
+        {
             state = -1.0f;
+            previousState = state;
+        }
         if (other.gameObject.layer == 9)
+        {
             state = 1.0f;
+            previousState = state;
+        }
     }
 }
